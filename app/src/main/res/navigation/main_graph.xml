@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_grah"
+    app:startDestination="@id/artistsFragment">
+
+    <fragment
+        android:id="@+id/artistsFragment"
+        android:name="com.rsschool.task7_lastfm.ui.fragments.ArtistsFragment"
+        android:label="@string/bar_title_fragment_artists"
+        tools:layout="@layout/fragment_artists">
+        <action
+            android:id="@+id/action_artistsFragment_to_albumsFragment"
+            app:destination="@id/albumsFragment"
+            app:enterAnim="@anim/flip_left_in"
+            app:exitAnim="@anim/flip_left_out"
+            app:popEnterAnim="@anim/flip_right_in"
+            app:popExitAnim="@anim/flip_right_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/albumsFragment"
+        android:name="com.rsschool.task7_lastfm.ui.fragments.AlbumsFragment"
+        android:label="{artistName}"
+        tools:layout="@layout/fragment_albums">
+        <argument
+            android:name="artistName"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_albumsFragment_to_tracksFragment"
+            app:destination="@id/tracksFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/tracksFragment"
+        android:name="com.rsschool.task7_lastfm.ui.fragments.TracksFragment"
+        android:label="{artistName}/ {albumName}"
+        tools:layout="@layout/fragment_tracks">
+        <argument
+            android:name="artistName"
+            app:argType="string" />
+        <argument
+            android:name="albumName"
+            app:argType="string" />
+        <argument
+            android:name="albumImageUrl"
+            app:argType="string" />
+        <argument
+            android:name="albumUrl"
+            app:argType="string" />
+    </fragment>
+</navigation>

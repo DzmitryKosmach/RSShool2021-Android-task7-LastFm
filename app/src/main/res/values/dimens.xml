@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="marginCardItems">8dp</dimen>
+    <dimen name="imageViewPadding10dp">10dp</dimen>
+    <dimen name="textViewPadding10dp">10dp</dimen>
+    <dimen name="textViewPadding5dp">5dp</dimen>
+    <dimen name="textViewTextSizeItem">20sp</dimen>
+    <dimen name="textViewMarginTop">-56dp</dimen>
+    <dimen name="imageViewMinHeight">220dp</dimen>
+    <dimen name="tracks_album_height">180dp</dimen>
+    <dimen name="layoutPadding10dp">10dp</dimen>
+    <dimen name="imageViewAlbumTracksHeight">360dp</dimen>
+    <dimen name="tracks_artist_name_margin_start">10dp</dimen>
+    <dimen name="tracks_artist_name_margin_top">-100dp</dimen>
+    <dimen name="tracks_artist_text_size">24sp</dimen>
+    <dimen name="tracks_album_name_margin_start">10dp</dimen>
+    <dimen name="tracks_album_name_margin_top">8dp</dimen>
+    <dimen name="tracks_album_name_margin_bottom">20dp</dimen>
+    <dimen name="tracks_album_text_size">20sp</dimen>
+</resources>

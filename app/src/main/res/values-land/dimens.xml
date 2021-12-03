@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="imageViewAlbumTracksHeight">260dp</dimen>
+    <dimen name="tracks_artist_name_margin_start">430dp</dimen>
+    <dimen name="tracks_artist_name_margin_top">-250dp</dimen>
+    <dimen name="tracks_artist_text_size">24sp</dimen>
+    <dimen name="tracks_album_name_margin_start">430dp</dimen>
+    <dimen name="tracks_album_name_margin_top">8dp</dimen>
+    <dimen name="tracks_album_name_margin_bottom">180dp</dimen>
+    <dimen name="tracks_album_text_size">20sp</dimen>
+</resources>

@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">LastFm</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="toast_bad_request">Nothing found</string>
+    <string name="query_hint">Type here to search Artists</string>
+    <string name="bar_title_fragment_artists">Artists</string>
+    <string name="bar_title_fragment_albums">Albums</string>
+    <string name="bar_title_fragment_tracks">Tracks</string>
+    <string name="menu_search">Search</string>
+    <string name="switch_dark_theme">Switch dark theme</string>
+</resources>

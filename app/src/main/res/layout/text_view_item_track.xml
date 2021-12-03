@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/textViewItemTrack"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/textViewInfo"
+    android:background="@drawable/rounded_corner_view_track"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="start"
+    android:layout_marginTop="10dp"
+    tools:text="TextView" />
