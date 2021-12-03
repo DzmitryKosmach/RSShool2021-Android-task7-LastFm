@@ -71,7 +71,7 @@ class AlbumsFragment : Fragment(R.layout.fragment_albums), OnAlbumPageItemClickL
 
         viewLifecycleOwner.lifecycleScope.launch {
             itemAdapter.submitData(PagingData.empty())
-            albumsViewModel.albumsFlow.collect { pagingData ->
+            albumsViewModel.albumsPagingFlow.collect { pagingData ->
                 itemAdapter.submitData(
                     viewLifecycleOwner.lifecycle,
                     pagingData

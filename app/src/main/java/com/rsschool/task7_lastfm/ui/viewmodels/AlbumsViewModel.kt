@@ -20,11 +20,11 @@ class AlbumsViewModel @ViewModelInject constructor(
 
     private var albumsPageSource = AlbumsPageSource(repository, artist)
 
-    lateinit var albumsFlow: Flow<PagingData<Album>>
+    lateinit var albumsPagingFlow: Flow<PagingData<Album>>
 
     fun createFlowPageSource(artist: Artist) {
         albumsPageSource = AlbumsPageSource(repository, artist)
-        albumsFlow = Pager(
+        albumsPagingFlow = Pager(
             PagingConfig(
                 pageSize = 18,
                 prefetchDistance = 10,

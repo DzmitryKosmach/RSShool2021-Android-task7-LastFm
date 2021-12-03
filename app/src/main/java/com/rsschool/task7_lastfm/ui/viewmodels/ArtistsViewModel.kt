@@ -21,9 +21,9 @@ class ArtistsViewModel @ViewModelInject constructor(
     private lateinit var artistsPageSource: ArtistsPageSource
 
     private val _controlsState = MutableStateFlow(ArtistsViewControlsState(false, ""))
-    val controlsState: Flow<ArtistsViewControlsState> = _controlsState
+    val controlsStateFlow: Flow<ArtistsViewControlsState> = _controlsState
 
-    lateinit var artistsFlow: Flow<PagingData<Artist>>
+    lateinit var artistsPagingFlow: Flow<PagingData<Artist>>
 
     init {
         createFlowPagingDataArtist()
@@ -31,7 +31,7 @@ class ArtistsViewModel @ViewModelInject constructor(
 
     fun createFlowPagingDataArtist() {
         artistsPageSource = ArtistsPageSource(repository, _controlsState.value)
-        artistsFlow = Pager(
+        artistsPagingFlow = Pager(
             PagingConfig(
                 pageSize = 18,
                 prefetchDistance = 10,

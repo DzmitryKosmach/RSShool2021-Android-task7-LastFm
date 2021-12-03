@@ -82,7 +82,7 @@ class ArtistsFragment : Fragment(R.layout.fragment_artists), OnArtistPageItemCli
 
         artistsJob = resetJob(false, "")
 
-        artistsViewModel.controlsState.onEach(::renderControlsState).launchIn(lifecycleScope)
+        artistsViewModel.controlsStateFlow.onEach(::renderControlsState).launchIn(lifecycleScope)
     }
 
     private fun resetJob(isSearching: Boolean, searchText: String): Job {
@@ -92,7 +92,7 @@ class ArtistsFragment : Fragment(R.layout.fragment_artists), OnArtistPageItemCli
         if (currentControlsState.isSearching) artistsViewModel.createFlowPagingDataArtist()
         return viewLifecycleOwner.lifecycleScope.launch {
             itemAdapter.submitData(PagingData.empty())
-            artistsViewModel.artistsFlow.collect { pagingData ->
+            artistsViewModel.artistsPagingFlow.collect { pagingData ->
                 itemAdapter.submitData(
                     viewLifecycleOwner.lifecycle,
                     pagingData

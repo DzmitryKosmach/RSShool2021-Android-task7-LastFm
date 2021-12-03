@@ -60,7 +60,6 @@ dependencies {
     androidTestImplementation 'androidx.test:core-ktx:1.2.0'
 
     //Test Hilt
-//    def test_hilt = "2.38.1"
     androidTestImplementation("com.google.dagger:hilt-android-testing:$hilt_version")
     kaptAndroidTest("com.google.dagger:hilt-android-compiler:$hilt_version")
 
