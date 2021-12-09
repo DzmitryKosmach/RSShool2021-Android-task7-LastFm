@@ -7,14 +7,14 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
-import com.rsschool.task7_lastfm.ui.pagesources.AlbumsPageSource
-import com.rsschool.task7_lastfm.repository.Repository
 import com.rsschool.task7_lastfm.model.Album
 import com.rsschool.task7_lastfm.model.Artist
+import com.rsschool.task7_lastfm.repository.IRepository
+import com.rsschool.task7_lastfm.ui.pagesources.AlbumsPageSource
 import kotlinx.coroutines.flow.Flow
 
 class AlbumsViewModel @ViewModelInject constructor(
-    val repository: Repository
+    val repository: IRepository
 ) : ViewModel() {
     val artist = Artist(null, null, null)
 

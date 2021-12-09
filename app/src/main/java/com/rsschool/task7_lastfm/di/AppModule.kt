@@ -3,6 +3,7 @@ package com.rsschool.task7_lastfm.di
 import com.rsschool.task7_lastfm.BASE_URL
 import com.rsschool.task7_lastfm.model.api.ArtistsApiImpl
 import com.rsschool.task7_lastfm.model.api.LastFmApi
+import com.rsschool.task7_lastfm.repository.IRepository
 import com.rsschool.task7_lastfm.repository.Repository
 import com.rsschool.task7_lastfm.ui.ArtistsViewControlsState
 import dagger.Module
@@ -19,7 +20,7 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideRepository(artistsApiImpl: ArtistsApiImpl): Repository = Repository(artistsApiImpl)
+    fun provideRepository(artistsApiImpl: ArtistsApiImpl): IRepository = Repository(artistsApiImpl)
 
     @Singleton
     @Provides

@@ -4,12 +4,10 @@ import androidx.paging.PagingSource
 import androidx.paging.PagingState
 import com.rsschool.task7_lastfm.model.Album
 import com.rsschool.task7_lastfm.model.Artist
-import com.rsschool.task7_lastfm.repository.Repository
-import java.lang.Exception
-import javax.inject.Inject
+import com.rsschool.task7_lastfm.repository.IRepository
 
-class AlbumsPageSource (
-    private val artistsRepository: Repository,
+class AlbumsPageSource(
+    private val artistsRepository: IRepository,
     private val artist: Artist?
 ) : PagingSource<Int, Album>() {
 

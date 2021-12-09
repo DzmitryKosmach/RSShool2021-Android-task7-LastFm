@@ -2,12 +2,12 @@ package com.rsschool.task7_lastfm.ui.pagesources
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.rsschool.task7_lastfm.ui.ArtistsViewControlsState
 import com.rsschool.task7_lastfm.model.Artist
-import com.rsschool.task7_lastfm.repository.Repository
+import com.rsschool.task7_lastfm.repository.IRepository
+import com.rsschool.task7_lastfm.ui.ArtistsViewControlsState
 
 class ArtistsPageSource(
-    private val artistsRepository: Repository,
+    private val artistsRepository: IRepository,
     private val artistsViewControlsState: ArtistsViewControlsState
 ) : PagingSource<Int, Artist>() {
 

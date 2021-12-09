@@ -4,16 +4,17 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
 import com.rsschool.task7_lastfm.repository.Repository
 import com.rsschool.task7_lastfm.model.Track
+import com.rsschool.task7_lastfm.repository.IRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.asStateFlow
 
 class TracksViewModel @ViewModelInject constructor(
-    val repository: Repository
+    val repository: IRepository
 ) : ViewModel() {
 
     private val _tracksStateFlow = MutableStateFlow(emptyList<Track>())
-    val tracksStateFlow: SharedFlow<List<Track>> = _tracksStateFlow.asStateFlow()
+    val tracksStateFlow = _tracksStateFlow.asStateFlow()
 
     private suspend fun getTracks(artistName: String, albumName: String):List<Track> {
         return try {

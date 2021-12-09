@@ -1,23 +1,19 @@
 package com.rsschool.task7_lastfm
 
-import androidx.fragment.app.testing.launchFragmentInContainer
-import androidx.test.core.app.launchActivity
 import androidx.test.espresso.matcher.ViewMatchers.assertThat
-import com.rsschool.task7_lastfm.model.api.ArtistsApiImpl
-import com.rsschool.task7_lastfm.repository.Repository
-import com.rsschool.task7_lastfm.ui.MainActivity
-import com.rsschool.task7_lastfm.ui.fragments.ArtistsFragment
-import dagger.Provides
+import com.rsschool.task7_lastfm.model.Track
+import com.rsschool.task7_lastfm.repository.FakeRepository
+import com.rsschool.task7_lastfm.ui.viewmodels.TracksViewModel
 import dagger.hilt.android.testing.HiltAndroidRule
 import dagger.hilt.android.testing.HiltAndroidTest
-import org.hamcrest.Matchers.containsString
+import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.runBlocking
+import org.hamcrest.Matchers.equalTo
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 import javax.inject.Inject
-import javax.inject.Singleton
 
-//@UninstallModules(AppModule::class)
 @HiltAndroidTest
 class MainTest {
 
@@ -30,30 +26,21 @@ class MainTest {
     }
 
     @Inject
-    lateinit var repository: Repository
+    lateinit var tracksViewModel: TracksViewModel
 
     @Test
-    fun someTest() {
-        assertThat("test string", containsString("test"))
+    fun getTracksByArtistAndAlbumInTracksViewModelTest(): Unit = runBlocking {
+        tracksViewModel.setListTracks("abba", "album1")
+        var tracks: List<Track> = emptyList()
+        tracks = tracksViewModel.tracksStateFlow.first()
+        assertThat(tracks, equalTo(FakeRepository.tracks))
     }
 
     @Test
-    fun mainActivityTest(){
-        val scenario = launchActivity<MainActivity>()
+    fun getEmptyListTracksByIncorrectArtistAndAlbumInTracksViewModelTest(): Unit = runBlocking {
+        tracksViewModel.setListTracks("abba1", "album1")
+        var tracks: List<Track> = emptyList()
+        tracks = tracksViewModel.tracksStateFlow.first()
+        assertThat(tracks, equalTo(emptyList()))
     }
-
-    @Test
-    fun artistsFragmentTest(){
-        val scenario = launchFragmentInContainer<ArtistsFragment>()
-    }
-
-//    @Module
-//    @InstallIn(ApplicationComponent::class)
-//        object AppModule {
-//        @Singleton
-//        @Provides
-//        fun provideRepository(artistsApiImpl: ArtistsApiImpl): Repository =
-//            Repository(artistsApiImpl)
-//    }
-
 }

@@ -17,11 +17,11 @@ import androidx.lifecycle.lifecycleScope
 import androidx.paging.LoadState
 import androidx.paging.PagingData
 import by.kirich1409.viewbindingdelegate.viewBinding
-import com.rsschool.task7_lastfm.ui.ArtistsViewControlsState
 import com.rsschool.task7_lastfm.R
+import com.rsschool.task7_lastfm.databinding.FragmentArtistsBinding
+import com.rsschool.task7_lastfm.ui.ArtistsViewControlsState
 import com.rsschool.task7_lastfm.ui.adapters.ArtistPageAdapter
 import com.rsschool.task7_lastfm.ui.adapters.OnArtistPageItemClickListener
-import com.rsschool.task7_lastfm.databinding.FragmentArtistsBinding
 import com.rsschool.task7_lastfm.ui.viewmodels.ArtistsViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Job

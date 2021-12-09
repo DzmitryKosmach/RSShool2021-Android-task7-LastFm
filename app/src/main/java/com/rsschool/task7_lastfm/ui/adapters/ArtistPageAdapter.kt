@@ -1,6 +1,5 @@
 package com.rsschool.task7_lastfm.ui.adapters
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.paging.PagingDataAdapter
@@ -8,8 +7,8 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.rsschool.task7_lastfm.R
-import com.rsschool.task7_lastfm.model.Artist
 import com.rsschool.task7_lastfm.databinding.RecyclerViewItemArtistBinding
+import com.rsschool.task7_lastfm.model.Artist
 
 class ArtistPageAdapter (
     private var clickListener: OnArtistPageItemClickListener,

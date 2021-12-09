@@ -1,14 +1,13 @@
 package com.rsschool.task7_lastfm.model.api
 
 import androidx.annotation.IntRange
-import com.rsschool.task7_lastfm.model.*
-import com.rsschool.task7_lastfm.model.api.*
+import com.rsschool.task7_lastfm.model.Album
+import com.rsschool.task7_lastfm.model.Artist
+import com.rsschool.task7_lastfm.model.Track
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.withContext
 import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Query
 import javax.inject.Inject

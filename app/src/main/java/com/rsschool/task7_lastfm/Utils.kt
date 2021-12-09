@@ -3,7 +3,6 @@ package com.rsschool.task7_lastfm
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import androidx.core.content.ContextCompat
 
 const val START_TIME = "00:00"
 const val BASE_URL = "https://ws.audioscrobbler.com"
@@ -26,8 +25,3 @@ fun String.openInBrowser(context: Context){
         )
     )
 }
-
-//object SearchingArtists {
-//    var isSearching = false
-//    var artistName = ""
-//}

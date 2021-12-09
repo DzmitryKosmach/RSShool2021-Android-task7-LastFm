@@ -5,15 +5,15 @@ import javax.inject.Inject
 
 class Repository @Inject constructor(
     private val api: ArtistsApiImpl
-) {
+): IRepository {
 
-    suspend fun getTopArtists(page: Int, pageSize: Int) = api.getArtists(page, pageSize)
-    suspend fun getSearchArtists(page: Int, pageSize: Int, artistName: String) =
+    override suspend fun getTopArtists(page: Int, pageSize: Int) = api.getArtists(page, pageSize)
+    override suspend fun getSearchArtists(page: Int, pageSize: Int, artistName: String) =
         api.getSearchArtists(page, pageSize, artistName)
 
-    suspend fun getArtistAlbums(artistName: String, page: Int, pageSize: Int) =
+    override suspend fun getArtistAlbums(artistName: String, page: Int, pageSize: Int) =
         api.getAlbums(artistName, page, pageSize)
 
-    suspend fun getAlbumTracks(artistName: String, album: String) =
+    override suspend fun getAlbumTracks(artistName: String, album: String) =
         api.getAlbumTracks(artistName, album)
 }

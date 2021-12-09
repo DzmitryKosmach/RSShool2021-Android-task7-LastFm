@@ -2,10 +2,10 @@ package com.rsschool.task7_lastfm.ui.fragments
 
 import android.content.Context
 import android.os.Bundle
-import android.view.*
-import androidx.fragment.app.Fragment
+import android.view.View
 import android.widget.Toast
 import androidx.core.view.isVisible
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.navArgs
@@ -13,9 +13,9 @@ import androidx.paging.LoadState
 import androidx.paging.PagingData
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.rsschool.task7_lastfm.R
+import com.rsschool.task7_lastfm.databinding.FragmentAlbumsBinding
 import com.rsschool.task7_lastfm.ui.adapters.AlbumPageAdapter
 import com.rsschool.task7_lastfm.ui.adapters.OnAlbumPageItemClickListener
-import com.rsschool.task7_lastfm.databinding.FragmentAlbumsBinding
 import com.rsschool.task7_lastfm.ui.viewmodels.AlbumsViewModel
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect

@@ -7,15 +7,15 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
-import com.rsschool.task7_lastfm.ui.pagesources.ArtistsPageSource
-import com.rsschool.task7_lastfm.ui.ArtistsViewControlsState
-import com.rsschool.task7_lastfm.repository.Repository
 import com.rsschool.task7_lastfm.model.Artist
+import com.rsschool.task7_lastfm.repository.IRepository
+import com.rsschool.task7_lastfm.ui.ArtistsViewControlsState
+import com.rsschool.task7_lastfm.ui.pagesources.ArtistsPageSource
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 
 class ArtistsViewModel @ViewModelInject constructor(
-    val repository: Repository
+    val repository: IRepository
 ): ViewModel() {
 
     private lateinit var artistsPageSource: ArtistsPageSource
