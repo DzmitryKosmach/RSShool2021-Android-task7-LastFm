@@ -21,13 +21,19 @@ class AlbumsPageSource(
         return try {
             val page: Int = params.key ?: 1
             val pageSize = params.loadSize
-            val response = artistsRepository.getArtistAlbums(artist?.name ?: "", page, pageSize)
-            val listArtists = checkNotNull(response.body())
-            val nextKey = if (listArtists.size < pageSize) null else page + 1
+
+            val listAlbums = getAlbumsByArtistName(page, pageSize, artist?.name ?: "")
+
+            val nextKey = if (listAlbums.size < pageSize) null else page + 1
             val prevKey = if (page == 1) null else page - 1
-            LoadResult.Page(listArtists, prevKey, nextKey)
+            LoadResult.Page(listAlbums, prevKey, nextKey)
         } catch (e: Exception){
             LoadResult.Error(Exception(e))
         }
+    }
+
+    suspend fun getAlbumsByArtistName(page: Int, pageSize: Int, artistName: String): List<Album>{
+        val response = artistsRepository.getArtistAlbums(artistName, page, pageSize)
+        return checkNotNull(response.body())
     }
 }

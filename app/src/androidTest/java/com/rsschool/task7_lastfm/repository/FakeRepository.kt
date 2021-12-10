@@ -34,12 +34,12 @@ class FakeRepository : IRepository {
     }
 
     companion object {
-        private val artists = listOf(
+        val artists = listOf(
             Artist("abba", "", "abba"),
             Artist("nirvana", "", "nirvana"),
             Artist("sher", "", "sher")
         )
-        private val albums = listOf(
+        val albums = listOf(
             Album(artists[0].name, "album1", "", "", ""),
             Album(artists[0].name, "album2", "", "", ""),
             Album(artists[0].name, "album3", "", "", "")

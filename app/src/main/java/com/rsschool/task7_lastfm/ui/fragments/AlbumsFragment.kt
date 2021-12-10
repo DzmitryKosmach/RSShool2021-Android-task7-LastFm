@@ -45,8 +45,7 @@ class AlbumsFragment : Fragment(R.layout.fragment_albums), OnAlbumPageItemClickL
 
         val args: AlbumsFragmentArgs by navArgs()
         val artistName = args.artistName
-        albumsViewModel.artist.name = artistName
-        albumsViewModel.createFlowPageSource(albumsViewModel.artist)
+        albumsViewModel.createFlowPageSource(artistName)
 
         val itemAdapter = AlbumPageAdapter(this)
         itemAdapter.addLoadStateListener { loadState ->

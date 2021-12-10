@@ -18,7 +18,7 @@ class ArtistsViewModel @ViewModelInject constructor(
     val repository: IRepository
 ): ViewModel() {
 
-    private lateinit var artistsPageSource: ArtistsPageSource
+    lateinit var artistsPageSource: ArtistsPageSource
 
     private val _controlsState = MutableStateFlow(ArtistsViewControlsState(false, ""))
     val controlsStateFlow: Flow<ArtistsViewControlsState> = _controlsState

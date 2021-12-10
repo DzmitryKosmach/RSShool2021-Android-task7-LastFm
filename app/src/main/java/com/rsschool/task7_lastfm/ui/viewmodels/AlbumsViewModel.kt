@@ -18,11 +18,12 @@ class AlbumsViewModel @ViewModelInject constructor(
 ) : ViewModel() {
     val artist = Artist(null, null, null)
 
-    private var albumsPageSource = AlbumsPageSource(repository, artist)
+    var albumsPageSource = AlbumsPageSource(repository, artist)
 
     lateinit var albumsPagingFlow: Flow<PagingData<Album>>
 
-    fun createFlowPageSource(artist: Artist) {
+    fun createFlowPageSource(artistName: String) {
+        artist.name = artistName
         albumsPageSource = AlbumsPageSource(repository, artist)
         albumsPagingFlow = Pager(
             PagingConfig(
